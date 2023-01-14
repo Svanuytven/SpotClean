@@ -81,7 +81,7 @@ createSlide <- function(count_mat, slide_info, gene_cutoff=0.1, verbose=TRUE){
 
     # filter genes
     gene_cutoff <- max(gene_cutoff,0)
-    good_gene <- rowMeans(count_ts_mat)>gene_cutoff
+    good_gene <- rowMeans(count_ts_mat)>=gene_cutoff
 
     if(verbose){
         message("Filtered out ",sum(!good_gene)
